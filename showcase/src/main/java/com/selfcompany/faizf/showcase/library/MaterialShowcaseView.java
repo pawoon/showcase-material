@@ -134,6 +134,20 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
         mDismissButton.setOnClickListener(this);
     }
 
+    private void updateLayout(int layout, int id, String content) {
+        View contentView = LayoutInflater.from(getContext()).inflate(layout, this, true);
+        try {
+            TextView name;
+            name = findViewById(id);
+            name.setText(content);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        mContentBox = contentView.findViewById(R.id.content_box);
+        mDismissButton = contentView.findViewById(R.id.tv_dismiss);
+        mDismissButton.setOnClickListener(this);
+    }
+
     /*this for get view to get any component in layout*/
     public View getViewLayout(){
         return contentView;
@@ -615,6 +629,11 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
             return this;
         }
 
+        public Builder setLayout(int layout, int id, String content) {
+            showcaseView.setLayout(layout, id, content);
+            return this;
+        }
+
         /**
          * Set the title text shown on the ShowcaseView.
          */
@@ -815,6 +834,11 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
     private void setLayout(int layout) {
         this.layout = layout;
         updateLayout(layout);
+    }
+
+    private void setLayout(int layout, int id , String content) {
+        this.layout = layout;
+        updateLayout(layout, id, content);
     }
 
     private void singleUse(String showcaseID) {
