@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.github.dcendents.android-maven'
-group = 'com.pawoon.faizfiaz'
+group = 'com.github.faizfiaz'
 
 android {
     compileSdkVersion 27
