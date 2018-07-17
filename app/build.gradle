@@ -1,6 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.github.dcendents.android-maven'
-group = 'com.github.faizfiaz'
 
 android {
     compileSdkVersion 27
@@ -18,9 +16,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    task sourcesJar(type: Jar) {
+        from android.sourceSets.main.java.srcDirs
+        classifier = 'sources'
+    }
 
-    configurations.all {
-        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    artifacts {
+        archives sourcesJar
     }
 }
 
