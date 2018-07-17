@@ -1,9 +1,9 @@
-package com.selfcompany.faizf.showcase.library.shape;
+package com.showcase.faizfiaz.shape;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import com.selfcompany.faizf.showcase.library.target.Target;
+import com.showcase.faizfiaz.target.Target;
 
 /**
  * Specifies a shape of the target (e.g circle, rectangle).

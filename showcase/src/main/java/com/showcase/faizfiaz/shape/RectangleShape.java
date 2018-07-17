@@ -1,11 +1,11 @@
-package com.selfcompany.faizf.showcase.library.shape;
+package com.showcase.faizfiaz.shape;
 
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
-import com.selfcompany.faizf.showcase.library.target.Target;
+import com.showcase.faizfiaz.target.Target;
 
 
 public class RectangleShape implements Shape {

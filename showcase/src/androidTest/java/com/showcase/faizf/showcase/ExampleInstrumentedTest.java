@@ -1,4 +1,4 @@
-package com.selfcompany.faizf.showcase;
+package com.showcase.faizf.showcase;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

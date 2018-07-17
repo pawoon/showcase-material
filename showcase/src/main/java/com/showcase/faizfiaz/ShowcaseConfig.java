@@ -1,10 +1,10 @@
-package com.selfcompany.faizf.showcase.library;
+package com.showcase.faizfiaz;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
 
-import com.selfcompany.faizf.showcase.library.shape.CircleShape;
-import com.selfcompany.faizf.showcase.library.shape.Shape;
+import com.showcase.faizfiaz.shape.CircleShape;
+import com.showcase.faizfiaz.shape.Shape;
 
 
 public class ShowcaseConfig {

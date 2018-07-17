@@ -1,4 +1,4 @@
-package com.selfcompany.faizf.showcase;
+package com.showcase.faizf.showcase;
 
 import org.junit.Test;
 

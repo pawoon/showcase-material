@@ -1,4 +1,4 @@
-package com.selfcompany.faizf.showcase.library;
+package com.showcase.faizfiaz;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;

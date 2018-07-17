@@ -1,4 +1,4 @@
-package com.selfcompany.faizf.showcase.library.target;
+package com.showcase.faizfiaz.target;
 
 import android.app.Activity;
 import android.graphics.Point;

@@ -1,4 +1,4 @@
-package com.selfcompany.faizf.showcase.library;
+package com.showcase.faizfiaz;
 
 import android.graphics.Point;
 import android.view.View;

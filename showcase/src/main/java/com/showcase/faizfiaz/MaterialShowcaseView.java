@@ -1,4 +1,4 @@
-package com.selfcompany.faizf.showcase.library;
+package com.showcase.faizfiaz;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -26,13 +26,13 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.selfcompany.faizf.showcase.R;
-import com.selfcompany.faizf.showcase.library.shape.CircleShape;
-import com.selfcompany.faizf.showcase.library.shape.NoShape;
-import com.selfcompany.faizf.showcase.library.shape.RectangleShape;
-import com.selfcompany.faizf.showcase.library.shape.Shape;
-import com.selfcompany.faizf.showcase.library.target.Target;
-import com.selfcompany.faizf.showcase.library.target.ViewTarget;
+import com.showcase.faizf.showcase.R;
+import com.showcase.faizfiaz.shape.CircleShape;
+import com.showcase.faizfiaz.shape.NoShape;
+import com.showcase.faizfiaz.shape.RectangleShape;
+import com.showcase.faizfiaz.shape.Shape;
+import com.showcase.faizfiaz.target.Target;
+import com.showcase.faizfiaz.target.ViewTarget;
 
 import java.util.ArrayList;
 import java.util.List;

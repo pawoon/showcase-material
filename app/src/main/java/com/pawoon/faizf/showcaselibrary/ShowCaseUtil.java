@@ -3,8 +3,8 @@ package com.pawoon.faizf.showcaselibrary;
 import android.app.Activity;
 import android.view.View;
 
-import com.selfcompany.faizf.showcase.library.MaterialShowcaseView;
-import com.selfcompany.faizf.showcase.library.shape.RectangleShape;
+import com.showcase.faizfiaz.MaterialShowcaseView;
+import com.showcase.faizfiaz.shape.RectangleShape;
 
 
 /**
@@ -20,7 +20,7 @@ public class ShowCaseUtil {
                 .setShape(new RectangleShape(width, height, drawSpotLight))
                 .setShapePadding(0)
                 .setTopBottom(topBottom)
-                .setMaskColour(activity.getResources().getColor(com.selfcompany.faizf.showcase.R.color.blackTrans))
+                .setMaskColour(activity.getResources().getColor(com.showcase.faizf.showcase.R.color.blackTrans))
                 .show();
     }
 }
