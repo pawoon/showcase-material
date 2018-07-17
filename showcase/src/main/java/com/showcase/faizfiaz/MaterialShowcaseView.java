@@ -26,7 +26,7 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.showcase.faizf.showcase.R;
+import com.showcase.faizf.R;
 import com.showcase.faizfiaz.shape.CircleShape;
 import com.showcase.faizfiaz.shape.NoShape;
 import com.showcase.faizfiaz.shape.RectangleShape;
