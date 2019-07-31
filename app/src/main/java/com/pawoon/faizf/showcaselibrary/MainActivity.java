@@ -1,7 +1,7 @@
 package com.pawoon.faizf.showcaselibrary;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button6.setOnClickListener(this);
         button7.setOnClickListener(this);
         /*
-        *Sometimes If you need to show after onCreate
-        *Use this function to make sure the view component weight and height full ready rendered
-        */
+         *Sometimes If you need to show after onCreate
+         *Use this function to make sure the view component weight and height full ready rendered
+         */
         button1.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -52,19 +52,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == button1) {
-            ShowCaseUtil.showCase(button1, this, R.layout.onboard_sample, button1.getWidth(), button1.getHeight(), true, true);
+            ShowCaseUtil.showCase(button1, this, R.layout.onboard_sample, button1.getWidth(), button1.getHeight(), true, true, null);
         } else if (view == button2) {
-            ShowCaseUtil.showCase(button2, this, R.layout.onboard_sample, button2.getWidth(), button2.getHeight(), true, true);
+            ShowCaseUtil.showCase(button2, this, R.layout.onboard_sample, button2.getWidth(), button2.getHeight(), true, true, null);
         } else if (view == button3) {
-            ShowCaseUtil.showCase(button3, this, R.layout.onboard_sample, button3.getWidth(), button3.getHeight(), true, true);
+            ShowCaseUtil.showCase(button3, this, R.layout.onboard_sample, button3.getWidth(), button3.getHeight(), true, true, null);
         } else if (view == button4) {
-            ShowCaseUtil.showCase(button4, this, R.layout.onboard_sample, button4.getWidth(), button4.getHeight(), true, true);
+            ShowCaseUtil.showCase(button4, this, R.layout.onboard_sample, button4.getWidth(), button4.getHeight(), true, true, null);
         } else if (view == button5) {
-            ShowCaseUtil.showCase(button5, this, R.layout.onboard_sample, button5.getWidth(), button5.getHeight(), true, true);
+            ShowCaseUtil.showCase(button5, this, R.layout.onboard_sample, button5.getWidth(), button5.getHeight(), true, true, null);
         } else if (view == button6) {
-            ShowCaseUtil.showCase(button6, this, R.layout.onboard_sample, button6.getWidth(), button6.getHeight(), true, true);
+            ShowCaseUtil.showCase(button6, this, R.layout.onboard_sample, button6.getWidth(), button6.getHeight(), true, true, null);
         } else if (view == button7) {
-            ShowCaseUtil.showCase(button7, this, R.layout.onboard_sample, button7.getWidth(), button7.getHeight(), true, true);
+//            ShowCaseUtil.showCase(button7, this, R.layout.onboard_sample, button7.getWidth(), button7.getHeight(), true, true);
+            DialogFragmentSample dialogFragmentSample = new DialogFragmentSample();
+            dialogFragmentSample.show(getSupportFragmentManager(), "Dialog Sample");
         }
 
     }

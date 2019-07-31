@@ -14,6 +14,7 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Handler;
+import android.support.v4.app.DialogFragment;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -140,7 +141,7 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
             TextView name;
             name = findViewById(id);
             name.setText(content);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         mContentBox = contentView.findViewById(R.id.content_box);
@@ -149,7 +150,7 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
     }
 
     /*this for get view to get any component in layout*/
-    public View getViewLayout(){
+    public View getViewLayout() {
         return contentView;
     }
 
@@ -609,11 +610,14 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
         final MaterialShowcaseView showcaseView;
 
         private final Activity activity;
+        private final DialogFragment dialogFragment;
 
-        public Builder(Activity activity) {
+        public Builder(Activity activity, DialogFragment dialogFragment) {
             this.activity = activity;
+            this.dialogFragment = dialogFragment;
 
             showcaseView = new MaterialShowcaseView(activity);
+
         }
 
         /**
@@ -824,8 +828,12 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
             return showcaseView;
         }
 
-        public MaterialShowcaseView show() {
-            build().show(activity);
+        public MaterialShowcaseView show(boolean isDialog) {
+            if (isDialog) {
+                build().show(dialogFragment);
+            } else {
+                build().show(activity);
+            }
             return showcaseView;
         }
 
@@ -836,7 +844,7 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
         updateLayout(layout);
     }
 
-    private void setLayout(int layout, int id , String content) {
+    private void setLayout(int layout, int id, String content) {
         this.layout = layout;
         updateLayout(layout, id, content);
     }
@@ -876,9 +884,47 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
     /**
      * Reveal the showcaseview. Returns a boolean telling us whether we actually did show anything
      *
-     * @param activity
+     * @param dialogFragment
      * @return
      */
+    public boolean show(final DialogFragment dialogFragment) {
+        /**
+         * if we're in single use mode and have already shot our bolt then do nothing
+         */
+        if (mSingleUse) {
+            if (mPrefsManager.hasFired()) {
+                return false;
+            } else {
+                mPrefsManager.setFired();
+            }
+        }
+        if (dialogFragment.getDialog() != null) {
+            if (dialogFragment.getDialog().getWindow() != null) {
+                ((ViewGroup) dialogFragment.getDialog().getWindow().getDecorView()).addView(this);
+            }
+        }
+
+        setShouldRender(true);
+
+        mHandler = new Handler();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                if (mShouldAnimate) {
+                    animateIn();
+                } else {
+                    setVisibility(VISIBLE);
+                    notifyOnDisplayed();
+                }
+            }
+        }, mDelayInMillis);
+
+        updateDismissButton();
+
+        return true;
+    }
+
     public boolean show(final Activity activity) {
 
         /**
