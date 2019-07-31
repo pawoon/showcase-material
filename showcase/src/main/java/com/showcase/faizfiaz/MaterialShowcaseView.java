@@ -243,7 +243,6 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
         return true;
     }
 
-
     private void notifyOnDisplayed() {
 
         if (mListeners != null) {
@@ -750,6 +749,11 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
             return this;
         }
 
+        public Builder setDismissListenerClickAction(View.OnClickListener listenerClickAction){
+            showcaseView.overrideDismissListenerAction(listenerClickAction);
+            return this;
+        }
+
         public Builder singleUse(String showcaseID) {
             showcaseView.singleUse(showcaseID);
             return this;
@@ -837,6 +841,10 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
             return showcaseView;
         }
 
+    }
+
+    private void overrideDismissListenerAction(OnClickListener listenerClickAction) {
+        mDismissButton.setOnClickListener(listenerClickAction);
     }
 
     private void setLayout(int layout) {
