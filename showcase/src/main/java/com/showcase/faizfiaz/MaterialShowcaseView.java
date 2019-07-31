@@ -843,7 +843,7 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
 
     }
 
-    private void overrideDismissListenerAction(OnClickListener listenerClickAction) {
+    public void overrideDismissListenerAction(OnClickListener listenerClickAction) {
         mDismissButton.setOnClickListener(listenerClickAction);
     }
 
