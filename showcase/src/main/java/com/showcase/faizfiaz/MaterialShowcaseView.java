@@ -136,7 +136,7 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
     }
 
     private void updateLayout(int layout, int id, String content) {
-        View contentView = LayoutInflater.from(getContext()).inflate(layout, this, true);
+        contentView = LayoutInflater.from(getContext()).inflate(layout, this, true);
         try {
             TextView name;
             name = findViewById(id);
